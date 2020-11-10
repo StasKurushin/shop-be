@@ -1,0 +1,77 @@
+openApi: "3.0.0"
+info:
+  description: "This is a documentation for lambdas functions"
+  version: "1.0.0"
+  title: "Swagger Node-AWS"
+  termsOfService: "http://swagger.io/terms/"
+host: "r1rryls8ua.execute-api.eu-west-1.amazonaws.com"
+basePath: "/dev/api/v1"
+schemes:
+- "https"
+- "http"
+paths:
+  /products/available:
+    get:
+      tags:
+      - "getProductsList"
+      summary: "returns all available products"
+      description: ""
+      operationId: "getAllProducts"
+      consumes:
+      - "application/json"
+      - "application/xml"
+      produces:
+      - "application/xml"
+      - "application/json"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        "500":
+          description: "Internal Server Error"
+  /products/{productId}:
+    get:
+      tags:
+      - "getProductsById"
+      summary: "Finds product by id"
+      description: ""
+      operationId: "getProductById"
+      produces:
+      - "application/xml"
+      - "application/json"
+      parameters:
+      - name: "productId"
+        in: "path"
+        description: "ID of product to return"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            type: "array"
+            items:
+              $ref: "#/definitions/Product"
+        "400":
+          description: "Invalid status value"
+definitions:
+  Product:
+    type: "object"
+    properties:
+      count: 
+        type: "integer"
+        format: 'int64'
+      description:
+        type: "string"
+      id:
+        type: "string"
+      price:
+        type: "number"
+      title:
+        type: "string"
+externalDocs:
+  description: "Find out more about Swagger"
+  url: "http://swagger.io"
