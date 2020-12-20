@@ -1,0 +1,27 @@
+{
+  "name": "aws-sdk",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "dependencies": {
+    "aws": "0.0.3-2",
+    "aws-sdk": "^2.790.0",
+    "pg": "^8.4.2",
+    "sdk": "^0.5.0",
+    "swagger-ui-express": "^4.1.4"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/StasKurushin/shop-be.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/StasKurushin/shop-be/issues"
+  },
+  "homepage": "https://github.com/StasKurushin/shop-be#readme"
+}
